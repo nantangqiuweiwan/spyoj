@@ -27,7 +27,8 @@
 }
 
 #userLayout .footer {
-  padding: 16px;
+  background: #efefef;
+  padding: 8px;
   position: sticky;
   bottom: 0;
   left: 0;
