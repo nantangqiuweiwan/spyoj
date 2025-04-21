@@ -4,8 +4,7 @@ import com.spy.spyoj.judge.strategy.DefaultJudgeStrategy;
 import com.spy.spyoj.judge.strategy.JavaLanguageJudgeStrategy;
 import com.spy.spyoj.judge.strategy.JudgeContext;
 import com.spy.spyoj.judge.strategy.JudgeStrategy;
-import com.spy.spyoj.model.dto.questionsubmit.JudgeInfo;
-import com.spy.spyoj.model.entity.Question;
+import com.spy.spyoj.judge.codesandbox.model.JudgeInfo;
 import com.spy.spyoj.model.entity.QuestionSubmit;
 import org.springframework.stereotype.Service;
 

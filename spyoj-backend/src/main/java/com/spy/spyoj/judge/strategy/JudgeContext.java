@@ -1,7 +1,7 @@
 package com.spy.spyoj.judge.strategy;
 
 import com.spy.spyoj.model.dto.question.JudgeCase;
-import com.spy.spyoj.model.dto.questionsubmit.JudgeInfo;
+import com.spy.spyoj.judge.codesandbox.model.JudgeInfo;
 import com.spy.spyoj.model.entity.Question;
 import com.spy.spyoj.model.entity.QuestionSubmit;
 import lombok.Data;

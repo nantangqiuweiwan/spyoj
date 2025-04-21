@@ -3,7 +3,7 @@ package com.spy.spyoj.judge.codesandbox.impl;
 import com.spy.spyoj.judge.codesandbox.CodeSandbox;
 import com.spy.spyoj.judge.codesandbox.model.ExecuteCodeRequest;
 import com.spy.spyoj.judge.codesandbox.model.ExecuteCodeResponse;
-import com.spy.spyoj.model.dto.questionsubmit.JudgeInfo;
+import com.spy.spyoj.judge.codesandbox.model.JudgeInfo;
 import com.spy.spyoj.model.enums.JudgeInfoMessageEnum;
 import com.spy.spyoj.model.enums.QuestionSubmitStatusEnum;
 import lombok.extern.slf4j.Slf4j;

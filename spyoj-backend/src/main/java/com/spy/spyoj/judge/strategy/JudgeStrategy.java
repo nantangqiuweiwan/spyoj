@@ -1,6 +1,6 @@
 package com.spy.spyoj.judge.strategy;
 
-import com.spy.spyoj.model.dto.questionsubmit.JudgeInfo;
+import com.spy.spyoj.judge.codesandbox.model.JudgeInfo;
 
 /**
  * 判题策略

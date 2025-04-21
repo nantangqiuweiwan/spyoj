@@ -1,4 +1,4 @@
-package com.spy.spyoj.model.dto.questionsubmit;
+package com.spy.spyojcodesandbox.model;
 
 import lombok.Data;
 

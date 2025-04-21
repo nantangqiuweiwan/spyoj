@@ -3,7 +3,7 @@ package com.spy.spyoj.judge.strategy;
 import cn.hutool.json.JSONUtil;
 import com.spy.spyoj.model.dto.question.JudgeCase;
 import com.spy.spyoj.model.dto.question.JudgeConfig;
-import com.spy.spyoj.model.dto.questionsubmit.JudgeInfo;
+import com.spy.spyoj.judge.codesandbox.model.JudgeInfo;
 import com.spy.spyoj.model.entity.Question;
 import com.spy.spyoj.model.enums.JudgeInfoMessageEnum;
 

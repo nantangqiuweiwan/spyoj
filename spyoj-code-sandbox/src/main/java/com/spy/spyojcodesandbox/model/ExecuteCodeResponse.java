@@ -1,4 +1,4 @@
-package com.spy.spyoj.judge.codesandbox.model;
+package com.spy.spyojcodesandbox.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
