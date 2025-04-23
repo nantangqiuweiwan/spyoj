@@ -103,4 +103,4 @@ knife4j:
           - com.spy.spyoj.controller
 #代码沙箱配置
 codesandbox:
-  type: example
+  type: remote

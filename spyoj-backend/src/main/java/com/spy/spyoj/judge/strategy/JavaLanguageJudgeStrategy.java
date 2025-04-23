@@ -9,6 +9,7 @@ import com.spy.spyoj.model.enums.JudgeInfoMessageEnum;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Java 判题策略
@@ -18,8 +19,8 @@ public class JavaLanguageJudgeStrategy implements JudgeStrategy {
     public JudgeInfo doJudge(JudgeContext judgeContext) {
 
         JudgeInfo judgeInfo = judgeContext.getJudgeInfo();
-        Long memory = judgeInfo.getMemory();
-        Long time = judgeInfo.getTime();
+        Long memory = Optional.ofNullable(judgeInfo.getMemory()).orElse(0L);
+        Long time = Optional.ofNullable(judgeInfo.getTime()).orElse(0L);
         List<String> inputList = judgeContext.getInputList();
         List<String> outputList = judgeContext.getOutputList();
         List<JudgeCase> judgeCaseList = judgeContext.getJudgeCaseList();
@@ -54,7 +55,7 @@ public class JavaLanguageJudgeStrategy implements JudgeStrategy {
         }
         // Java 程序本身需要额外执行 10 秒
         long JAVA_PROGRAM_TIME_COST = 10000L;
-        if ((time - JAVA_PROGRAM_TIME_COST)> needTimeLimit) {
+        if ((time - JAVA_PROGRAM_TIME_COST) > needTimeLimit) {
             judgeInfoMessageEnum = JudgeInfoMessageEnum.TIME_LIMIT_EXCEEDED;
             judgeInfoResponse.setMessage(judgeInfoMessageEnum.getValue());
             return judgeInfoResponse;
