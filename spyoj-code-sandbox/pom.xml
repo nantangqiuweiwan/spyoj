@@ -83,7 +83,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.spy.spyojcodesandbox.SpyojCodeSandboxApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>

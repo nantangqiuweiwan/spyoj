@@ -1,5 +1,6 @@
 package com.spy.spyojcodesandbox.controller;
 
+import com.spy.spyojcodesandbox.JavaDockerCodeSandbox;
 import com.spy.spyojcodesandbox.JavaNativeCodeSandbox;
 import com.spy.spyojcodesandbox.model.ExecuteCodeRequest;
 import com.spy.spyojcodesandbox.model.ExecuteCodeResponse;
@@ -22,6 +23,9 @@ public class MainController {
 
     @Resource
     private JavaNativeCodeSandbox javaNativeCodeSandbox;
+
+    @Resource
+    private JavaDockerCodeSandbox javaDockerCodeSandbox;
 
     @GetMapping("/health")
     public String healthCheck() {
@@ -46,5 +50,6 @@ public class MainController {
             throw new RuntimeException("请求参数为空");
         }
         return javaNativeCodeSandbox.executeCode(executeCodeRequest);
+//        return javaDockerCodeSandbox.executeCode(executeCodeRequest);
     }
 }

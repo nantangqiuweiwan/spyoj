@@ -7,6 +7,7 @@ import com.spy.spyoj.judge.codesandbox.model.JudgeInfo;
 import com.spy.spyoj.model.entity.Question;
 import com.spy.spyoj.model.enums.JudgeInfoMessageEnum;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,6 +20,11 @@ public class JavaLanguageJudgeStrategy implements JudgeStrategy {
     public JudgeInfo doJudge(JudgeContext judgeContext) {
 
         JudgeInfo judgeInfo = judgeContext.getJudgeInfo();
+        if (judgeInfo == null) {
+            judgeInfo = new JudgeInfo();
+            judgeInfo.setMemory(0L);
+            judgeInfo.setTime(0L);
+        }
         Long memory = Optional.ofNullable(judgeInfo.getMemory()).orElse(0L);
         Long time = Optional.ofNullable(judgeInfo.getTime()).orElse(0L);
         List<String> inputList = judgeContext.getInputList();
@@ -30,6 +36,10 @@ public class JavaLanguageJudgeStrategy implements JudgeStrategy {
         JudgeInfo judgeInfoResponse = new JudgeInfo();
         judgeInfoResponse.setMemory(memory);
         judgeInfoResponse.setTime(time);
+
+        if (outputList == null) {
+            outputList = new ArrayList<>();
+        }
 
         if (outputList.size() != inputList.size()) {
             judgeInfoMessageEnum = JudgeInfoMessageEnum.WRONG_ANSWER;

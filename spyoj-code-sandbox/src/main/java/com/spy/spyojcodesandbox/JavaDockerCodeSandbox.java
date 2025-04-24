@@ -38,6 +38,7 @@ public class JavaDockerCodeSandbox extends JavaCodeSandboxTemplate {
     public static void main(String[] args) {
         JavaDockerCodeSandbox javaDockerCodeSandbox = new JavaDockerCodeSandbox();
         ExecuteCodeRequest executeCodeRequest = new ExecuteCodeRequest();
+
         executeCodeRequest.setInputList(Arrays.asList("1 2", "3 4"));
         String code = ResourceUtil.readStr("testCode/simpleComputeArgs/Main.java", StandardCharsets.UTF_8);
 //        String code = ResourceUtil.readStr("testCode/simpleCompute/Main.java", StandardCharsets.UTF_8);
@@ -68,7 +69,9 @@ public class JavaDockerCodeSandbox extends JavaCodeSandboxTemplate {
         String userCodeParentPath = userCodeFile.getParentFile().getAbsolutePath();
 
         DockerClient dockerClient = DockerClientBuilder.getInstance().build();
-        String image = "crpi-j2hxffh08f9c9ixu.cn-shanghai.personal.cr.aliyuncs.com/spy-images/openjdk:8-alpine";
+//        String image = "crpi-j2hxffh08f9c9ixu.cn-shanghai.personal.cr.aliyuncs.com/spy-images/openjdk:8-alpine";
+        String image = "openjdk:8-alpine";
+
         if (FIRST_INIT) {
             PullImageCmd pullImageCmd = dockerClient.pullImageCmd(image);
             PullImageResultCallback pullImageResultCallback = new PullImageResultCallback() {

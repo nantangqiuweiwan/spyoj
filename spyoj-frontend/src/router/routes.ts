@@ -26,6 +26,7 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: "/user/register",
         name: "用户注册",
+        // component: UserRegisterView,
         component: UserRegisterView,
       },
     ],

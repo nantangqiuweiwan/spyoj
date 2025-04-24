@@ -92,12 +92,24 @@ public class JudgeServiceImpl implements JudgeService {
 
         questionSubmitUpdate = new QuestionSubmit();
         questionSubmitUpdate.setId(questionSubmitId);
-        questionSubmitUpdate.setStatus(QuestionSubmitStatusEnum.SUCCEED.getValue());
+        if ("成功".equals(judgeInfo.getMessage())) {
+            questionSubmitUpdate.setStatus(QuestionSubmitStatusEnum.SUCCEED.getValue());
+            question.setAcceptedNum(question.getAcceptedNum() + 1);
+        } else {
+            questionSubmitUpdate.setStatus(QuestionSubmitStatusEnum.FAILED.getValue());
+        }
         questionSubmitUpdate.setJudgeInfo(JSONUtil.toJsonStr(judgeInfo));
         update = questionSubmitService.updateById(questionSubmitUpdate);
         if (!update) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目状态更新错误");
         }
+        // 更新题目提交数
+        question.setSubmitNum(question.getSubmitNum() + 1);
+        update = questionService.updateById(question);
+        if (!update) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目状态更新错误");
+        }
+
         QuestionSubmit questionSubmitResult = questionSubmitService.getById(questionId);
         return questionSubmitResult;
     }

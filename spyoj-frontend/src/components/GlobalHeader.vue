@@ -24,7 +24,27 @@
     </a-col>
     <a-col flex="100px">
       <div>
-        {{ store.state.user?.loginUser?.userName ?? "未登录" }}
+        <a-dropdown @select="handleSelect">
+          <a-button
+            >{{ store.state.user?.loginUser?.userName ?? "未登录" }}
+          </a-button>
+          <template #content>
+            <a-doption
+              v-if="
+                store.state.user?.loginUser?.userRole === ACCESS_ENUM.NOT_LOGIN
+              "
+              @click="toLogin"
+              >登录
+            </a-doption>
+            <a-doption
+              v-if="
+                store.state.user?.loginUser?.userRole !== ACCESS_ENUM.NOT_LOGIN
+              "
+              @click="toLogin"
+              >切换账号
+            </a-doption>
+          </template>
+        </a-dropdown>
       </div>
     </a-col>
   </a-row>
@@ -70,6 +90,11 @@ const doMenuClick = (key: string) => {
   router.push({
     path: key,
   });
+};
+
+const toLogin = () => {
+  // console.log("登录函数");
+  router.push({ path: "user/login" });
 };
 </script>
 
