@@ -94,7 +94,7 @@ const doMenuClick = (key: string) => {
 
 const toLogin = () => {
   // console.log("登录函数");
-  router.push({ path: "user/login" });
+  router.push({ path: "/user/login" });
 };
 </script>
 

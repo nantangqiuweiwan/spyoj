@@ -60,7 +60,7 @@ const handleSubmit = async () => {
   const res = await UserControllerService.userRegisterUsingPost(form);
   if (res.code === 0) {
     message.success("注册成功");
-    router.push({ path: "login" });
+    await router.push({ path: "/user/login" });
   } else {
     message.error("注册失败，" + res.message);
   }

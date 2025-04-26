@@ -48,7 +48,7 @@ const handleSubmit = async () => {
   const res = await UserControllerService.userLoginUsingPost(form);
   if (res.code === 0) {
     await store.dispatch("user/getLoginUser");
-    router.push({
+    await router.push({
       path: "/",
       replace: true,
     });
@@ -59,6 +59,6 @@ const handleSubmit = async () => {
 
 const toRegister = () => {
   // console.log("注册函数");
-  router.push({ path: "register" });
+  router.push({ path: "/user/register" });
 };
 </script>
