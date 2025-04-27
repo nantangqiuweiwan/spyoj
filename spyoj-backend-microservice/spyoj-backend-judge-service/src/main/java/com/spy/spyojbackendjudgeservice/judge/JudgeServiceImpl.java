@@ -48,7 +48,7 @@ public class JudgeServiceImpl implements JudgeService {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "题目不存在");
         }
 
-        if (!Objects.equals(questionsubmit.getStatus(), QuestionSubmitStatusEnum.WAITING.getValue())) {
+        if (!QuestionSubmitStatusEnum.WAITING.getValue().equals(questionsubmit.getStatus())) {
             throw new BusinessException(ErrorCode.OPERATION_ERROR, "题目正在判题中");
         }
 

@@ -2,6 +2,7 @@ package com.spy.spyoj.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 
+import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
@@ -11,7 +12,7 @@ import lombok.Data;
  */
 @TableName(value ="question")
 @Data
-public class Question {
+public class Question implements Serializable {
     /**
      * id
      */
